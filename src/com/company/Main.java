@@ -9,26 +9,36 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         //Welcome message
+        welcomeMessage();
+
+        //Read input
+        String weapon = getString().toLowerCase();
+
+        //Confirm choice
+        confirmChoice(weapon);
+
+        //Calculate winner based on weapon
+        calcWinnerBasedOnWeapon(weapon);
+    }
+
+    private static void welcomeMessage() {
         System.out.println("Choose your weapon:");
         System.out.println("Axe");
         System.out.println("Bow");
         System.out.println("Sword");
-
-        //Read input
-        String line = (new BufferedReader(
-                new InputStreamReader(System.in))
-        ).readLine();
-
-        //Confirm choice
-        if(line.toLowerCase().equals("axe")) System.out.println("You chose a" + line);
-        if(line.toLowerCase().equals("bow")) System.out.println("You chose " + line);
-        if(line.toLowerCase().equals("sword")) System.out.println("You chose " + line);
-
-        //Calculate winner based on weapon
-        calcWbow(line);
     }
 
-    public static void calcWbow(String input){
+    private static void confirmChoice(String line) {
+        System.out.println("You chose a" + line);
+    }
+
+    private static String getString() throws IOException {
+        return (new BufferedReader(
+                    new InputStreamReader(System.in))
+            ).readLine();
+    }
+
+    public static void calcWinnerBasedOnWeapon(String input){
         String weapon = input.toLowerCase();
 
         if(weapon.equals("axe")) System.out.println("You won!");
