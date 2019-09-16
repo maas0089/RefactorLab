@@ -38,9 +38,7 @@ public class Main {
             ).readLine();
     }
 
-    public static void calcWinnerBasedOnWeapon(String input){
-        String weapon = input.toLowerCase();
-
+    public static void calcWinnerBasedOnWeapon(String weapon){
         if(weapon.equals("axe")) System.out.println("You won!");
         else if (weapon.equals("sword")) System.out.println("You lost!");
         else if (weapon.equals("bow")) System.out.println("You missed every shot but you can still flee. Let's call it a tie.");
